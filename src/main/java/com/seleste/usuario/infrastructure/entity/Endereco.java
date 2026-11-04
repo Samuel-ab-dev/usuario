@@ -11,24 +11,24 @@ import lombok.*;
 @Builder
 @Table(name = "endereco")
 public class Endereco {
-@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-@Column(name = "rua")
+    @Column(name = "rua")
     private String rua;
 
-@Column(name = "numero")
+    @Column(name = "numero")
     private String numero;
 
-@Column(name = "complemento", length = 15)
+    @Column(name = "complemento", length = 15)
     private String complemento;
 
-@Column(name = "cidade")
+    @Column(name = "cidade")
     private String cidade;
 
-@Column(name = "estado")
+    @Column(name = "estado")
     private String estado;
 
-@Column(name = "cep", length = 9)
+    @Column(name = "cep", length = 9)
     private String cep;
 }
