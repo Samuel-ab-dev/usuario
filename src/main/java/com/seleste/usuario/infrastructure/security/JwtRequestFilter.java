@@ -27,7 +27,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
     // Método chamado uma vez por requisição para processar o filtro
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
+                                    FilterChain chain)
             throws ServletException, IOException {
 
         // Obtém o valor do header "Authorization" da requisição
@@ -47,7 +48,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 // Valida o token JWT
                 if (jwtUtil.validateToken(token, username)) {
                     // Cria um objeto de autenticação com as informações do usuário
-                    UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
+                    UsernamePasswordAuthenticationToken authentication = new
+                            UsernamePasswordAuthenticationToken(
                             userDetails, null, userDetails.getAuthorities());
                     // Define a autenticação no contexto de segurança
                     SecurityContextHolder.getContext().setAuthentication(authentication);
