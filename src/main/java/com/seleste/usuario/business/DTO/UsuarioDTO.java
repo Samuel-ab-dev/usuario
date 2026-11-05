@@ -15,5 +15,4 @@ public class UsuarioDTO {
     private String senha;
     private List<EnderecoDTO> endereco;
     private List<TelefoneDTO> telefone;
-
 }
