@@ -1,0 +1,33 @@
+services:
+  usuario:
+    build: .
+    container_name: usuario
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/db_usuario
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 989736961
+    depends_on:
+      - db
+    networks:
+      - default
+      - agendador-network
+
+
+  db:
+    image: postgres:latest
+    container_name: usuario-db
+    environment:
+      POSTGRES_DB: db_usuario
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 989736961
+    ports:
+      - "5432:5432"
+    networks:
+      - default
+
+networks:
+  agendador-network:
+    external: true
+    name: agendador-network
