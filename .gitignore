@@ -4,8 +4,8 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-docker-compose.yaml
-Dockerfile
+.docker-compose.yaml
+.Dockerfile
 
 .apt_generated
 .classpath
