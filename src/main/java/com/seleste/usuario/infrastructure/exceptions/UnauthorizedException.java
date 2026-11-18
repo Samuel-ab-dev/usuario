@@ -1,13 +1,11 @@
 package com.seleste.usuario.infrastructure.exceptions;
 
-import javax.naming.AuthenticationException;
-
-public class UnauthorizedException extends AuthenticationException {
+public class UnauthorizedException extends RuntimeException  {
     public UnauthorizedException(String message) {
         super(message);
     }
 
     public UnauthorizedException(String message, Throwable throwable) {
-        super(message);
+        super(message, throwable);
     }
 }
