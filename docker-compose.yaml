@@ -7,7 +7,7 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/db_usuario
       SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: 989736961
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
       SECRET_KEY: ${SECRET_KEY}
     depends_on:
       - db
@@ -22,7 +22,7 @@ services:
     environment:
       POSTGRES_DB: db_usuario
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 989736961
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
     networks:
