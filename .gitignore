@@ -6,6 +6,7 @@ build/
 !**/src/test/**/build/
 docker-compose.yaml
 Dockerfile
+.env
 
 .apt_generated
 .classpath
@@ -31,5 +32,4 @@ out/
 /dist/
 /nbdist/
 /.nb-gradle/
-.env
 .vscode/
